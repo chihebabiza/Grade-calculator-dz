@@ -33,8 +33,8 @@ This is a web application built with **Next.js** that allows university students
 
 ## 💻 Technologies Used
 
-- Next.js (React framework)
-- JavaScript
+- Next.js
+- TypeScript
 - localStorage for data persistence
 
 ## 🔗 Live Demo
