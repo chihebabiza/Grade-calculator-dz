@@ -36,21 +36,12 @@ export const metadata: Metadata = {
         siteName: 'Grade Calculator DZ',
         locale: 'fr_DZ',
         type: 'website',
-        images: [
-            {
-                url: '/og-image.png',
-                width: 1200,
-                height: 630,
-                alt: 'Grade Calculator DZ - Calculateur de Moyenne',
-            },
-        ],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Calculateur de Moyenne - Grade Calculator DZ',
         description:
             'Calculateur de moyenne universitaire gratuit pour étudiants algériens.',
-        images: ['/og-image.png'],
     },
     robots: {
         index: true,
@@ -82,9 +73,6 @@ export default function RootLayout({
                 />
                 <meta name="theme-color" content="#000000" />
                 <meta name="color-scheme" content="light dark" />
-                <link rel="manifest" href="/manifest.json" />
-                <link rel="icon" href="/favicon.ico" />
-                <link rel="apple-touch-icon" href="/icon-192x192.png" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link
                     rel="preconnect"
