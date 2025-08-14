@@ -319,8 +319,8 @@ export default function MoyenneCalculator() {
                                                 })
                                             }
                                         >
-                                            <SelectTrigger>
-                                                <SelectValue />
+                                            <SelectTrigger aria-label="Sélectionner le système de notation">
+                                                <SelectValue placeholder="Choisir un système de notation" />
                                             </SelectTrigger>
                                             <SelectContent>
                                                 <SelectItem value="exam-only">
@@ -412,7 +412,10 @@ export default function MoyenneCalculator() {
                                             !formData.coefficient
                                         }
                                     >
-                                        <Plus className="h-4 w-4 mr-2" />
+                                        <Plus
+                                            className="h-4 w-4 mr-2"
+                                            aria-hidden="true"
+                                        />
                                         Ajouter Module
                                     </Button>
                                 </CardContent>
@@ -426,6 +429,11 @@ export default function MoyenneCalculator() {
                                         <Button
                                             variant="outline"
                                             size="sm"
+                                            aria-label={
+                                                editingWeights
+                                                    ? 'Annuler la modification des poids'
+                                                    : 'Modifier les poids de calcul'
+                                            }
                                             onClick={() => {
                                                 if (editingWeights) {
                                                     setTempWeights(weights);
@@ -436,9 +444,15 @@ export default function MoyenneCalculator() {
                                             }}
                                         >
                                             {editingWeights ? (
-                                                <X className="h-4 w-4" />
+                                                <X
+                                                    className="h-4 w-4"
+                                                    aria-hidden="true"
+                                                />
                                             ) : (
-                                                <Edit2 className="h-4 w-4" />
+                                                <Edit2
+                                                    className="h-4 w-4"
+                                                    aria-hidden="true"
+                                                />
                                             )}
                                         </Button>
                                     </CardTitle>
@@ -735,8 +749,8 @@ function ModuleCard({
                                 setEditData({ ...editData, scheme: value })
                             }
                         >
-                            <SelectTrigger>
-                                <SelectValue />
+                            <SelectTrigger aria-label="Modifier le système de notation">
+                                <SelectValue placeholder="Système de notation" />
                             </SelectTrigger>
                             <SelectContent>
                                 <SelectItem value="exam-only">
@@ -816,11 +830,16 @@ function ModuleCard({
                             onClick={() => onSave(editData)}
                             className="flex-1"
                         >
-                            <Save className="h-3 w-3 mr-1" />
+                            <Save className="h-3 w-3 mr-1" aria-hidden="true" />
                             Sauvegarder
                         </Button>
-                        <Button size="sm" variant="outline" onClick={onCancel}>
-                            <X className="h-3 w-3" />
+                        <Button
+                            size="sm"
+                            variant="outline"
+                            onClick={onCancel}
+                            aria-label="Annuler les modifications"
+                        >
+                            <X className="h-3 w-3" aria-hidden="true" />
                         </Button>
                     </div>
                 </CardContent>
@@ -839,11 +858,21 @@ function ModuleCard({
                         </div>
                     </div>
                     <div className="flex gap-1">
-                        <Button size="sm" variant="ghost" onClick={onEdit}>
-                            <Edit2 className="h-3 w-3" />
+                        <Button
+                            size="sm"
+                            variant="ghost"
+                            onClick={onEdit}
+                            aria-label={`Modifier le module ${module.name}`}
+                        >
+                            <Edit2 className="h-3 w-3" aria-hidden="true" />
                         </Button>
-                        <Button size="sm" variant="ghost" onClick={onDelete}>
-                            <Trash2 className="h-3 w-3" />
+                        <Button
+                            size="sm"
+                            variant="ghost"
+                            onClick={onDelete}
+                            aria-label={`Supprimer le module ${module.name}`}
+                        >
+                            <Trash2 className="h-3 w-3" aria-hidden="true" />
                         </Button>
                     </div>
                 </div>
